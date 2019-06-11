@@ -6,11 +6,13 @@ import _pickle as cPickle
 import numpy as np
 import time
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 print("Program Begins now!")
 EPOCHS = 1000
 BATCH_SIZE = 50
 DATA_PATH = '/home/shashwat/Documents/CIFAR10-Dataset/'
-LOG_DIR = '/home/shashwat/Documents/NFT/CIFAR10/Logs/'
+LOG_DIR = '/home/shashwat/Documents/NFT/CIFAR10/Logs'
+
 def weight_variable(shape):
     initial = tf.truncated_normal(shape, stddev=0.1, dtype=tf.float32)
     return tf.Variable(initial)
@@ -18,25 +20,6 @@ def weight_variable(shape):
 def bias_variable(shape):
     initial = tf.constant(0.1, shape=shape, dtype=tf.float32)
     return tf.Variable(initial)
-
-'''
-def conv2d(x, W):
-    return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
-
-def max_pool_2x2(x):
-    return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
-
-def conv_layer(ip, shape):
-    W = weight_variable(shape)
-    b = bias_variable([shape[3]])
-    return tf.nn.relu(conv2d(ip, W) + b)
-
-def full_layer(ip, size):
-    in_size = int(ip.get_shape()[1])
-    W = weight_variable([in_size, size])
-    b = bias_variable([size])
-    return tf.add(tf.matmul(ip, W), b)
-'''
 
 def unpickle(_file):
     with open(os.path.join(DATA_PATH, _file), 'rb') as fo:
@@ -174,14 +157,17 @@ full_drop4 = tf.nn.dropout(full4, keep_prob=keep_prob, name='full4_dropout')
 
 y_conv = nn_layer(full_drop4, 10, layer_name='Predicted_output', act=None)
 print("Layers created!")
+
 with tf.name_scope('cross_entropy'):
     with tf.name_scope('total'):
         cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=y_conv, labels=y))
 tf.summary.scalar('cross_entropy', cross_entropy)
 print("Loss function defined!")
+
 with tf.name_scope('train'):
     train_step = tf.train.AdamOptimizer(1e-3).minimize(cross_entropy)
 print("Optimizer defined!")
+
 with tf.name_scope('accuracy'):
     with tf.name_scope('correct_prediction'):
         correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y, 1))
@@ -190,9 +176,10 @@ with tf.name_scope('accuracy'):
 tf.summary.scalar('accuracy', accuracy)
 
 merged = tf.summary.merge_all()
-train_writer = tf.summary.FileWriter(LOG_DIR + 'train', tf.get_default_graph())
-test_writer = tf.summary.FileWriter(LOG_DIR + 'test', tf.get_default_graph())
+train_writer = tf.summary.FileWriter(LOG_DIR + '/train', tf.get_default_graph())
+test_writer = tf.summary.FileWriter(LOG_DIR + '/test', tf.get_default_graph())
 print("Log writers created!")
+
 init = tf.global_variables_initializer()
 
 def test(sess):
