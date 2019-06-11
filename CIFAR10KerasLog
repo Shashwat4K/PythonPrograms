@@ -1,0 +1,80 @@
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-3
+OMP: Info #156: KMP_AFFINITY: 4 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 1 packages x 2 cores/pkg x 2 threads/core (2 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 0 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 1 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 1 thread 1 
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21636 thread 0 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21640 thread 1 bound to OS proc set 1
+WARNING:tensorflow:From /home/shashwat/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py:435: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/shashwat/anaconda3/lib/python3.7/site-packages/tensorflow/python/keras/layers/core.py:143: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+Train on 50000 samples, validate on 10000 samples
+WARNING:tensorflow:From /home/shashwat/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Epoch 1/25
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21649 thread 2 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21677 thread 3 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21678 thread 4 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21648 thread 5 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21679 thread 6 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21681 thread 7 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 21636 tid 21682 thread 8 bound to OS proc set 0
+50000/50000 [==============================] - 159s 3ms/sample - loss: 1.5704 - acc: 0.4256 - val_loss: 2.1119 - val_acc: 0.2471
+Epoch 2/25
+50000/50000 [==============================] - 175s 3ms/sample - loss: 1.2155 - acc: 0.5625 - val_loss: 1.7512 - val_acc: 0.6075
+Epoch 3/25
+50000/50000 [==============================] - 167s 3ms/sample - loss: 1.0349 - acc: 0.6322 - val_loss: 1.1203 - val_acc: 0.6486
+Epoch 4/25
+50000/50000 [==============================] - 169s 3ms/sample - loss: 0.9129 - acc: 0.6761 - val_loss: 0.9085 - val_acc: 0.6859
+Epoch 5/25
+50000/50000 [==============================] - 190s 4ms/sample - loss: 0.8297 - acc: 0.7067 - val_loss: 0.8832 - val_acc: 0.6953
+Epoch 6/25
+50000/50000 [==============================] - 208s 4ms/sample - loss: 0.7546 - acc: 0.7315 - val_loss: 0.7969 - val_acc: 0.7233
+Epoch 7/25
+50000/50000 [==============================] - 199s 4ms/sample - loss: 0.6922 - acc: 0.7530 - val_loss: 0.7970 - val_acc: 0.7302
+Epoch 8/25
+50000/50000 [==============================] - 178s 4ms/sample - loss: 0.6465 - acc: 0.7707 - val_loss: 0.7162 - val_acc: 0.7558
+Epoch 9/25
+50000/50000 [==============================] - 171s 3ms/sample - loss: 0.5910 - acc: 0.7894 - val_loss: 0.7263 - val_acc: 0.7484
+Epoch 10/25
+50000/50000 [==============================] - 174s 3ms/sample - loss: 0.5573 - acc: 0.8003 - val_loss: 0.7320 - val_acc: 0.7526
+Epoch 11/25
+50000/50000 [==============================] - 183s 4ms/sample - loss: 0.5275 - acc: 0.8118 - val_loss: 0.6903 - val_acc: 0.7669
+Epoch 12/25
+50000/50000 [==============================] - 197s 4ms/sample - loss: 0.4989 - acc: 0.8215 - val_loss: 0.7257 - val_acc: 0.7574
+Epoch 13/25
+50000/50000 [==============================] - 175s 4ms/sample - loss: 0.4564 - acc: 0.8367 - val_loss: 0.7317 - val_acc: 0.7605
+Epoch 14/25
+50000/50000 [==============================] - 174s 3ms/sample - loss: 0.4282 - acc: 0.8463 - val_loss: 0.6996 - val_acc: 0.7686
+Epoch 15/25
+50000/50000 [==============================] - 174s 3ms/sample - loss: 0.4079 - acc: 0.8533 - val_loss: 0.7185 - val_acc: 0.7682
+Epoch 16/25
+50000/50000 [==============================] - 178s 4ms/sample - loss: 0.3896 - acc: 0.8589 - val_loss: 0.6824 - val_acc: 0.7756
+Epoch 17/25
+50000/50000 [==============================] - 176s 4ms/sample - loss: 0.3620 - acc: 0.8697 - val_loss: 0.7244 - val_acc: 0.7680
+Epoch 18/25
+50000/50000 [==============================] - 176s 4ms/sample - loss: 0.3475 - acc: 0.8754 - val_loss: 0.7120 - val_acc: 0.7778
+Epoch 19/25
+50000/50000 [==============================] - 178s 4ms/sample - loss: 0.3318 - acc: 0.8819 - val_loss: 0.7360 - val_acc: 0.7757
+Epoch 20/25
+50000/50000 [==============================] - 177s 4ms/sample - loss: 0.3134 - acc: 0.8869 - val_loss: 0.7819 - val_acc: 0.7654
+Epoch 21/25
+50000/50000 [==============================] - 173s 3ms/sample - loss: 0.3088 - acc: 0.8896 - val_loss: 0.7767 - val_acc: 0.7683
+Epoch 22/25
+50000/50000 [==============================] - 177s 4ms/sample - loss: 0.2914 - acc: 0.8964 - val_loss: 0.7516 - val_acc: 0.7741
+Epoch 23/25
+50000/50000 [==============================] - 174s 3ms/sample - loss: 0.2818 - acc: 0.8992 - val_loss: 0.7342 - val_acc: 0.7778
+Epoch 24/25
+50000/50000 [==============================] - 176s 4ms/sample - loss: 0.2719 - acc: 0.9021 - val_loss: 0.7810 - val_acc: 0.7728
+Epoch 25/25
+50000/50000 [==============================] - 174s 3ms/sample - loss: 0.2679 - acc: 0.9038 - val_loss: 0.7520 - val_acc: 0.7812
