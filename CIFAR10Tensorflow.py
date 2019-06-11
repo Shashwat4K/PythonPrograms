@@ -1,10 +1,9 @@
 import os
 import tensorflow as tf
-import tensorboard
 import matplotlib.pyplot as plt
 import _pickle as cPickle
 import numpy as np
-import time
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 print("Program Begins now!")
